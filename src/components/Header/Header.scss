@@ -1,0 +1,35 @@
+@import "../../variables";
+
+
+.header{
+    position: relative;
+    background-blend-mode: overlay;
+    background-image: url("../../assets/images/banner-five.jpg");
+    background-color: $pinkColor;
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+@media all and (min-width: 1200px) {
+    .header{
+        position: relative;
+        height: 100vh;
+    }
+    .header__v-link-container{
+        position: absolute;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        bottom:5rem;
+    }
+    .header__v-link-container a{
+        display: block;
+        padding: 2rem;
+        text-transform: capitalize;
+        transform: rotate(-90deg);
+    }
+    .header__text-container{
+        margin: 10rem 0rem 0rem;
+    }
+}

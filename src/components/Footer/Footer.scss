@@ -1,0 +1,14 @@
+@import "../../variables";
+
+.footer{
+  background-color: $whiteColor;
+  color: $grayColor;
+  padding-top: 1.5rem;
+  text-align: center;
+  height: $fourRem;
+  clear: both;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  z-index: 10;
+}
