@@ -1,13 +1,17 @@
 $grayColor: #bbbbbb;
 $deepGrayColor: #999999;
 $lightGrayColor: #d8d8d8;
+$purpleColor: #4c40f7;
 $whiteColor: white;
 $muliFont: 'Muli', sans-serif;
+$poppinsFont: 'Poppins', sans-serif;
 $fourRem:4rem;
 $fiveRem:5rem;
 $twoRem:2rem;
 $threeRem:3rem;
 $oneRem:1rem;
+$bold:bold;
+$bigSizeFont:4.5rem;
 $threeHundredPx:300px;
 $twoEightyPx:280px;
 $twoFiftyPx:250px;
@@ -15,3 +19,38 @@ $pinkColor:#f15751;
 $transparentColor: transparent;
 $yellowColor:#ffdd65;
 $blackColor:#222222;
+
+@mixin breakpoint($size) {
+  @if $size == small-phone-only {
+    @media (max-width: 330px) {
+      @content;
+    }
+  }
+  @if $size == phone-only {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == tablet-portrait-up {
+    @media (min-width: 600px) and (max-width: 768px) {
+      @content;
+    }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 769px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+$body-font-size: 16;
+
+@function rem-calc($value) {
+  @return #{$value/$body-font-size}rem;
+}

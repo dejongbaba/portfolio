@@ -1,0 +1,219 @@
+@import '../../App';
+
+.home {
+  position: relative;
+}
+
+%nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-right: 3rem;
+  cursor: pointer;
+}
+%gray {
+  color: $grayColor;
+}
+%py6 {
+  padding: 10rem 0;
+}
+%closeStroke {
+  content: '';
+  background-color: $whiteColor;
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+}
+%hamburger {
+  width: 50px;
+  cursor: pointer;
+  background-color: black;
+  height: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+%headerPadding {
+  padding: 4rem;
+}
+
+.header {
+  &__nav {
+    @extend %headerPadding;
+    display: grid;
+    position: relative;
+    z-index: 100;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.5fr 2.5fr 0.5fr;
+  }
+
+  &__avatar_showcase{
+    position: absolute;
+    top: 0;
+    right: 5%;
+  }
+
+
+  &__welcome_text {
+    max-width: 70%;
+    @extend %headerPadding;
+  }
+  &__title {
+    color: $purpleColor;
+    padding-left: 4rem;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  &__title::before {
+    background: $purpleColor;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50px;
+    height: 2px;
+  }
+
+  &__text_description {
+    color: $purpleColor;
+    font-weight: 600;
+    font-size: $bigSizeFont;
+    line-height: 1.1;
+    span {
+      display: block;
+    }
+  }
+
+  &__navItem {
+    @extend %nav-link;
+  }
+
+  &__logo {
+    @extend %nav-link;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  &__navbar {
+    display: flex;
+    align-items: center;
+    li {
+      margin-right: 1rem;
+    }
+  }
+
+  &__hamburger_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+  &__hamburger {
+    @extend %hamburger;
+    background-color: $purpleColor;
+  }
+
+  &__hamburger::after {
+    content: '';
+    @extend %hamburger;
+    display: block;
+  }
+
+  &__hamburger::before {
+    content: '';
+    display: block;
+    @extend %hamburger;
+  }
+}
+
+.menu {
+  position: absolute;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  background-color: $whiteColor;
+  transition: all 0.3s ease-in-out;
+  grid-template-columns: 1fr 2fr;
+
+  &__preview {
+    background-color: $purpleColor;
+    @extend %headerPadding;
+  }
+
+  &__preview_logo {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  &__showcase {
+    @extend %headerPadding;
+    position: relative;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 80vh;
+  }
+  &__contact {
+    @extend %py6;
+    i {
+      margin-right: 1rem;
+      @extend %gray;
+    }
+  }
+
+  &__contact_list {
+    margin-bottom: 1rem;
+  }
+
+  &__items {
+    @extend %py6;
+    margin-top: -15px;
+    font-size: $bigSizeFont;
+    font-weight: $bold;
+    line-height: 1.1;
+  }
+  &__item {
+    margin-bottom: 1rem;
+  }
+  &__footer {
+    display: flex;
+    i {
+      margin-right: 1rem;
+      @extend %gray;
+    }
+  }
+
+  &__footer_item {
+    margin-right: 1rem;
+  }
+
+  &__close {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 7%;
+    right: 7%;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    background-color: $purpleColor;
+    color: $whiteColor;
+  }
+  &__close::after {
+    @extend %closeStroke;
+    transform: translateY(-5px) rotate(-45deg);
+    margin-bottom: 5px;
+  }
+  &__close::before {
+    @extend %closeStroke;
+    margin-top: 10px;
+    transform: translateY(5px) rotate(45deg);
+  }
+}

@@ -1,22 +1,72 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Muli:400,800,900&display=swap');
-@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import './variables';
 
 /*css reset*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
   margin: 0;
   padding: 0;
   border: 0;
   outline: 0;
   font-weight: inherit;
-  font-style: inherit;
   font-size: 100%;
   font-family: inherit;
   vertical-align: baseline;
@@ -30,10 +80,13 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 body {
   line-height: 1;
-  font-family: 'Muli', sans-serif;
+  font-family: $poppinsFont, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -43,18 +96,23 @@ table {
   border-spacing: 0;
 }
 
-caption, th, td {
+caption,
+th,
+td {
   text-align: left;
   font-weight: normal;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: "";
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
 }
 
-blockquote, q {
-  quotes: "" "";
+blockquote,
+q {
+  quotes: '' '';
 }
 
 .muli-regular {
@@ -67,6 +125,15 @@ blockquote, q {
   font-weight: bold;
 }
 
+.poppins-bold {
+  font-family: $poppinsFont, sans-serif;
+  font-weight: bold;
+}
+.poppins-normal {
+  font-family: $poppinsFont, sans-serif;
+  font-weight: normal;
+}
+
 .playflair-regular {
   font-family: 'Playfair Display', serif;
   font-weight: normal;
@@ -77,210 +144,17 @@ blockquote, q {
   font-weight: bold;
 }
 
-.App {
-  text-align: center;
+[data-aos='transform'].aos-animate {
+  -webkit-transform: translate(0) rotateX(0deg) skewY(0deg);
+  transform: translate(0) rotateX(0deg) skewY(0deg);
+  opacity: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-.about_section {
-  display: flex;
-  width: 100%;
-  padding-top: $twoRem;
-  flex-direction: column;
-
-  .about-image {
-    width: 100%;
-    img {
-      width: 100%;
-    }
-  }
-  .about-description{
-    padding-top: $fourRem;
-    text-align: left;
-    color: $whiteColor;
-
-    h6,p{
-      margin-bottom: $twoRem;
-    }
-  }
-}
-
-.portfolio_section{
-  display: flex;
-  margin-top: $twoRem;
-  width: 100%;
-  flex-wrap: wrap;
-  .portfolio_card{
-    background-color: $transparentColor;
-    flex-basis: $twoEightyPx;
-    justify-content: center;
-    align-items: center;
-    width: $twoEightyPx;
-    margin-left: 0;
-    margin-bottom: $twoRem;
-    height: 200px;
-    box-shadow: none;
-    transform: translateY(0);
-    transition: all .3s ease-in-out;
-    position: relative;
-  }
-  .portfolio_description{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: $pinkColor;
-    color: $whiteColor;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    h1{
-      margin-bottom: $oneRem;
-      font-weight: bold;
-    }
-    a{
-      color: $lightGrayColor;
-      text-decoration: none;
-    }
-  }
-  .portfolio_card:hover{
-    transform: translateY(-10px);
-    transition: all .3s ease-in-out;
-  }
-  .portfolio_card:hover .portfolio_description {
-    transform: translate(-10px,11px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    opacity: 1;
-    box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.2);
-  }
-
-}
-
-@media all and (min-width: 1200px){
-
-  .about_section {
-    display: flex;
-    width: 80%;
-    padding-top: $twoRem;
-    flex-direction: row;
-
-    .about-image {
-      width: 100%;
-      img {
-        width: 60%;
-      }
-    }
-    .about-description{
-      padding-top: $fourRem;
-      text-align: left;
-      color: $whiteColor;
-
-      h6,p{
-        margin-bottom: $twoRem;
-        line-height: 1.5rem;
-      }
-    }
-  }
-
-  .portfolio_section{
-    display: flex;
-    padding: $twoRem;
-    margin-top: $twoRem;
-    width: 90%;
-    flex-wrap: wrap;
-    .portfolio_card,.last_item{
-      background-color: $transparentColor;
-      flex-basis: $twoEightyPx;
-      width: $twoEightyPx;
-      margin-left: $twoRem;
-      margin-bottom: $twoRem;
-      height: 200px;
-    }
-    .portfolio_card{
-      box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
-      transform: translateY(0);
-      transition: all .3s ease-in-out;
-      position: relative;
-      padding: 1.5rem;
-    }
-    .last_item{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: none;
-    }
-    .portfolio_description{
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background-color: $pinkColor;
-      color: $whiteColor;
-      opacity: 0;
-      transition: opacity .3s ease-in-out;
-      h1{
-        margin-bottom: $oneRem;
-        font-weight: bold;
-      }
-      a{
-        color: $lightGrayColor;
-        text-decoration: none;
-      }
-    }
-    .portfolio_card:hover{
-      transform: translateY(-10px);
-      box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.2);
-      transition: all .3s ease-in-out;
-    }
-    .last_item:hover{
-      transform: translateY(-10px);
-      box-shadow: none;
-      transition: all .3s ease-in-out;
-    }
-    .portfolio_card:hover .portfolio_description {
-      transform: translateY(-5px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      opacity: 1;
-      box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.2);
-    }
-
-  }
+[data-aos='transform'] {
+  -webkit-transform: rotateX(90deg) skewY(-5deg);
+  transform: rotateX(90deg) skewY(-5deg);
+  opacity: 0;
+  -webkit-transition-property: opacity, -webkit-transform;
+  -o-transition-property: transform, opacity;
+  transition-property: transform, opacity;
 }
