@@ -2,19 +2,32 @@
 
 .home {
   position: relative;
+  min-height: 100vh;
 }
 
 %nav-link {
   font-size: 1rem;
   font-weight: 500;
   margin-right: 3rem;
+  text-decoration: none;
   cursor: pointer;
+  color: $blackColor;
+  transition: all .3s ease-in-out;
 }
+%nav-link:hover {
+
+  color: $lightGreenColor;
+}
+
+
 %gray {
   color: $grayColor;
 }
 %py6 {
-  padding: 10rem 0;
+  padding:  $twoRem 0;
+  @include breakpoint(desktop-up){
+    padding: 10rem 0;
+  }
 }
 %closeStroke {
   content: '';
@@ -24,15 +37,25 @@
   height: 2px;
 }
 %hamburger {
-  width: 50px;
+  height: 64px;
+  width: 64px;
   cursor: pointer;
-  background-color: black;
-  height: 0.2rem;
-  margin-bottom: 0.5rem;
+  border: 0;
+  position: relative;
+  z-index: 10;
+  font-size: 0;
+  border-radius: 100%;
+  background: transparent;
+  transform: translate(0) rotate(0deg);
+  transition: all .3s ease-in-out;
 }
 
 %headerPadding {
-  padding: 4rem;
+
+  padding: 2rem 1rem;
+  @include breakpoint(desktop-up){
+    padding: 4rem;
+  }
 }
 
 .header {
@@ -40,31 +63,63 @@
     @extend %headerPadding;
     display: grid;
     position: relative;
-    z-index: 100;
+    //z-index: 100;
     grid-template-rows: 1fr;
-    grid-template-columns: 0.5fr 2.5fr 0.5fr;
+    grid-template-columns: 2fr 1fr;
+
+    @include breakpoint(tablet-landscape-up){
+      grid-template-columns: 0.5fr 2.5fr 0.5fr;
+
+    }
   }
 
-  &__avatar_showcase{
-    position: absolute;
-    top: 0;
-    right: 5%;
+  &__avatar_showcase {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 0 auto 1rem;
+
+    background: $lightGreenColor;
+    border-radius: $twoRem;
+    overflow: hidden;
+    img{
+      width: 100%;
+
+    }
+
+    @include breakpoint(tablet-landscape-up){
+      position: absolute;
+      top: 30%;
+      right: 5%;
+      width: 400px;
+      height: 400px;
+      margin: unset;
+    }
+
   }
 
 
   &__welcome_text {
-    max-width: 70%;
+
     @extend %headerPadding;
+    padding: $twoRem $oneRem;
+    max-width: 60%;
+
+    @include breakpoint(tablet-landscape-up){
+      max-width: 54%;
+      padding: 6rem $fourRem $fourRem;
+    }
   }
+  
   &__title {
-    color: $purpleColor;
+    color: $lightGreenColor;
     padding-left: 4rem;
     position: relative;
     margin-bottom: 1rem;
   }
 
   &__title::before {
-    background: $purpleColor;
+    background: $lightGreenColor;
     content: '';
     display: block;
     position: absolute;
@@ -75,10 +130,13 @@
   }
 
   &__text_description {
-    color: $purpleColor;
+    color: $blackColor;
     font-weight: 600;
-    font-size: $bigSizeFont;
-    line-height: 1.1;
+    font-size: 2rem;
+    @include breakpoint(tablet-landscape-up){
+      font-size: $bigSizeFont;
+    }
+    line-height: 1.3;
     span {
       display: block;
     }
@@ -91,12 +149,24 @@
   &__logo {
     @extend %nav-link;
     font-size: 2rem;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
     font-weight: bold;
+
+    a{
+      color: inherit;
+      text-decoration: none;
+    }
+
   }
 
   &__navbar {
-    display: flex;
-    align-items: center;
+    display: none;
+    @include breakpoint(tablet-landscape-up){
+      display: flex;
+      align-items: center;
+    }
     li {
       margin-right: 1rem;
     }
@@ -108,59 +178,102 @@
     justify-content: flex-end;
     cursor: pointer;
   }
-  &__hamburger {
-    @extend %hamburger;
-    background-color: $purpleColor;
-  }
 
+
+  &__hamburger{
+    @extend %hamburger;
+    padding: 5px;
+  }
   &__hamburger::after {
     content: '';
     @extend %hamburger;
-    display: block;
+    width: 32px;
+    height: 2px;
+    display: inline-block;
+    margin-top: 5px;
+    border-radius: 1rem;
+    background-color: $lightGreenColor;
   }
 
   &__hamburger::before {
     content: '';
-    display: block;
+    display: inline-block;
+    margin-bottom: 5px;
     @extend %hamburger;
+    width: 32px;
+    border-radius: 1rem;
+    height: 2px;
+    background-color: $lightGreenColor;
+  }
+
+  &__hamburger.active{
+    background-color: $lightGreenColor;
+  }
+
+  &__hamburger.active::before{
+    transform: translateY(7px) rotate(45deg);
+    background-color: $whiteColor;
+  }
+  &__hamburger.active::after{
+    background-color: $whiteColor;
+    transform: translateY(-5px) rotate(-45deg);
   }
 }
 
 .menu {
-  position: absolute;
-  z-index: 100;
+  position: fixed;
+  z-index: 9;
   opacity: 0;
   visibility: hidden;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  display: grid;
+
   background-color: $whiteColor;
   transition: all 0.3s ease-in-out;
-  grid-template-columns: 1fr 2fr;
+
+  @include breakpoint(desktop-up){
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
 
   &__preview {
-    background-color: $purpleColor;
+    background-color: $lightGreenColor;
     @extend %headerPadding;
+    display: none;
+    @include breakpoint(desktop-up){
+      display: block;
+    }
+    padding: 5rem 4rem;
   }
 
   &__preview_logo {
     font-weight: bold;
     font-size: 2rem;
+    color: $whiteColor;
   }
+
   &__showcase {
     @extend %headerPadding;
     position: relative;
   }
+
   &__wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    height: 80vh;
+
+    @include breakpoint(desktop-up){
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      height: 80vh;
+    }
   }
   &__contact {
     @extend %py6;
+    display: none;
+    @include breakpoint(desktop-up){
+      display: block;
+    }
     i {
       margin-right: 1rem;
       @extend %gray;
@@ -168,24 +281,38 @@
   }
 
   &__contact_list {
-    margin-bottom: 1rem;
+    margin-bottom: $threeRem;
+    font-size: $oneOneRem;
+    i{
+      color: $lightGreenColor;
+    }
   }
 
   &__items {
     @extend %py6;
     margin-top: -15px;
-    font-size: $bigSizeFont;
+
     font-weight: $bold;
     line-height: 1.1;
+    font-size: $threeRem;
+    @include breakpoint (desktop-up){
+      font-size: $bigSizeFont;
+    }
   }
   &__item {
     margin-bottom: 1rem;
   }
   &__footer {
     display: flex;
+    font-size: $oneOneRem;
+    a{
+      color: $blackColor;
+      text-decoration: none;
+      cursor: pointer;
+    }
     i {
       margin-right: 1rem;
-      @extend %gray;
+      color: $lightGreenColor;
     }
   }
 
@@ -203,7 +330,7 @@
     border-radius: 50%;
     padding: 10px;
     transition: all 0.3s ease-in-out;
-    background-color: $purpleColor;
+    background-color: $lightGreenColor;
     color: $whiteColor;
   }
   &__close::after {
@@ -216,4 +343,39 @@
     margin-top: 10px;
     transform: translateY(5px) rotate(45deg);
   }
+  .menu__item{
+    a{
+      text-decoration: none;
+      color: $blackColor;
+      transition: all .3s ease-in-out;
+    }
+    a:hover{
+      color: $lightGreenColor;
+    }
+    transform: translateY(120%);
+    transition: all .3s;
+  }
+
+}
+
+.menu.show{
+  opacity:1;
+  visibility:visible;
+
+  .menu__item{
+    transform: translateY(0);
+  }
+  .menu__item:nth-child(2){
+    transition-delay: .3s;
+  }
+
+  .menu__item:nth-child(3){
+    transition-delay: .4s;
+  }
+
+  .menu__item:last-of-type{
+    transition-delay: .5s;
+  }
+
+
 }

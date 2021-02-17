@@ -1,0 +1,57 @@
+@import "../../variables";
+
+%size{
+  width: 100%;
+  padding: 0 72px 0 24px;
+  min-height: 72px;
+  border-radius: 12px;
+}
+
+%fieldColors{
+  background: $grayShadeTwoColor;
+  border: 2px solid $grayShadeTwoColor;
+}
+
+
+.contacts__form{
+  &__field{
+    @extend %size;
+    width: unset;
+
+  }
+
+
+  .field__textarea{
+    @extend %size;
+    @extend %fieldColors;
+    height: 200px;
+    resize: none;
+    margin-bottom: $twoRem;
+    @extend %fontSize18;
+    @extend %fontFamilyPoppins;
+    width: 190px;
+
+    @include breakpoint(tablet-landscape-up){
+      width: 100%;
+    }
+    padding: 20px 72px 20px 24px;
+  }
+  .field__input{
+    height: 72px;
+    @extend %size;
+    width: 190px;
+    @extend %fieldColors;
+    @extend %fontFamilyPoppins;
+    font-size: 18px;
+    color: #111029;
+
+
+    @include breakpoint(tablet-landscape-up){
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
-import Button from './Button';
+import { Contact } from './Publication';
 
-describe("<ErrorLabel type='button'/>", () => {
+describe('<Contact/>', () => {
   beforeEach(() => {});
   afterEach(() => {});
 

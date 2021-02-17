@@ -1,4 +1,4 @@
-import Button from './Button';
+import ErrorLabel from './Button';
 
 describe("<ErrorLabel type='button'/>", () => {
   beforeEach(() => {});

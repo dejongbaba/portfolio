@@ -1,33 +1,43 @@
 $grayColor: #bbbbbb;
+$grayShadeTwoColor: rgba(244, 244, 244, 0.801191);
+$grayShadeColor: #6b6b6b;
 $deepGrayColor: #999999;
 $lightGrayColor: #d8d8d8;
 $purpleColor: #4c40f7;
 $whiteColor: white;
 $muliFont: 'Muli', sans-serif;
 $poppinsFont: 'Poppins', sans-serif;
-$fourRem:4rem;
-$fiveRem:5rem;
-$twoRem:2rem;
-$threeRem:3rem;
-$oneRem:1rem;
-$bold:bold;
-$bigSizeFont:4.5rem;
-$threeHundredPx:300px;
-$twoEightyPx:280px;
-$twoFiftyPx:250px;
-$pinkColor:#f15751;
+$fourRem: 4rem;
+$fiveRem: 5rem;
+$twoRem: 2rem;
+$threeRem: 3rem;
+$oneRem: 1rem;
+$oneFiveRem: 1.5rem;
+$oneTwoRem: 1.2rem;
+$oneOneRem: 1.1rem;
+$bold: bold;
+$bigSizeFont: 4.5rem;
+$threeHundredPx: 300px;
+$twoEightyPx: 280px;
+$twoFiftyPx: 250px;
+$pinkColor: #f15751;
+$redColor: #f15751;
+$lightRedColor: #fab3b2;
 $transparentColor: transparent;
-$yellowColor:#ffdd65;
-$blackColor:#222222;
+$yellowColor: #ffdd65;
+$blackColor: #222222;
+$deepBlueColor: #00113b;
+$lightGreenColor: #36B37E;
 
 @mixin breakpoint($size) {
-  @if $size == small-phone-only {
-    @media (max-width: 330px) {
+  @if $size == small-phone-up {
+    @media (min-width: 320px)
+    and ( max-width: 480px){
       @content;
     }
   }
-  @if $size == phone-only {
-    @media (max-width: 599px) {
+  @if $size == phone-up {
+    @media (min-width: 480px) and (max-width: 599px){
       @content;
     }
   } @else if $size == tablet-portrait-up {
@@ -35,7 +45,7 @@ $blackColor:#222222;
       @content;
     }
   } @else if $size == tablet-landscape-up {
-    @media (min-width: 769px) and (max-width: 1024px) {
+    @media (min-width: 769px) {
       @content;
     }
   } @else if $size == desktop-up {
@@ -53,4 +63,35 @@ $body-font-size: 16;
 
 @function rem-calc($value) {
   @return #{$value/$body-font-size}rem;
+}
+
+
+
+%halfWidth {
+  width: 50%;
+}
+%fontSize18 {
+  font-size: 18px;
+}
+%width80 {
+  width: 80%;
+}
+.w-100{
+  width: 100%;
+}
+%padding3 {
+  padding: 5rem;
+}
+%fontWeight600{
+  font-weight: 600;
+}
+%fontWeight500{
+  font-weight: 500;
+}
+%noBorder{
+  border: none;
+}
+
+%fontFamilyPoppins {
+  font-family: 'Poppins', sans-serif;
 }
