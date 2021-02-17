@@ -21,65 +21,65 @@ function About() {
         Contact Me
       </a>
 
-      <OwlCarousel
-        className="about__subsection"
-        nav
-        items={3}
-        margin={10}
-      >
-        <div className="detail__item">
-          <div className="detail__preview">
-            <img
-              src={require('../../assets/images/banner-five.jpg')}
-              alt=""
-            />
-          </div>
-          <p className="detail__category">User Interface</p>
-          <p className="detail__text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Adipisci aperiam, aspernatur atque commodi cum deserunt
-            dolorem eos ex fugit id impedit, iure maxime molestiae
-            numquam officia placeat, tempora tenetur velit?
-          </p>
-          <button className="button button__deep_blue">
-            Show Me
-          </button>
-        </div>
-        <div className="detail__item">
-          <div className="detail__preview">
-            <img
-              src={require('../../assets/images/banner-one.jpg')}
-              alt=""
-            />
-          </div>
-          <p className="detail__category">User Interface</p>
-          <p className="detail__text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Adipisci aperiam, aspernatur atque commodi cum deserunt
-            dolorem eos ex fugit id impedit, iure maxime molestiae
-            numquam officia placeat, tempora tenetur velit?
-          </p>
-          <button className="button button__green">Show Me</button>
-        </div>
-        <div className="detail__item">
-          <div className="detail__preview">
-            <img
-              src={require('../../assets/images/banner-one.jpg')}
-              alt=""
-            />
-          </div>
-          <p className="detail__category">User Interface</p>
-          <p className="detail__text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Adipisci aperiam, aspernatur atque commodi cum deserunt
-            dolorem eos ex fugit id impedit, iure maxime molestiae
-            numquam officia placeat, tempora tenetur velit?
-          </p>
-          <button className="button button__deep_blue">
-            Show Me
-          </button>
-        </div>
-      </OwlCarousel>
+      {/*<OwlCarousel*/}
+      {/*  className="about__subsection"*/}
+      {/*  nav*/}
+      {/*  items={3}*/}
+      {/*  margin={10}*/}
+      {/*>*/}
+      {/*  <div className="detail__item">*/}
+      {/*    <div className="detail__preview">*/}
+      {/*      <img*/}
+      {/*        src={require('../../assets/images/banner-five.jpg')}*/}
+      {/*        alt=""*/}
+      {/*      />*/}
+      {/*    </div>*/}
+      {/*    <p className="detail__category">User Interface</p>*/}
+      {/*    <p className="detail__text">*/}
+      {/*      Lorem ipsum dolor sit amet, consectetur adipisicing elit.*/}
+      {/*      Adipisci aperiam, aspernatur atque commodi cum deserunt*/}
+      {/*      dolorem eos ex fugit id impedit, iure maxime molestiae*/}
+      {/*      numquam officia placeat, tempora tenetur velit?*/}
+      {/*    </p>*/}
+      {/*    <button className="button button__deep_blue">*/}
+      {/*      Show Me*/}
+      {/*    </button>*/}
+      {/*  </div>*/}
+      {/*  <div className="detail__item">*/}
+      {/*    <div className="detail__preview">*/}
+      {/*      <img*/}
+      {/*        src={require('../../assets/images/banner-one.jpg')}*/}
+      {/*        alt=""*/}
+      {/*      />*/}
+      {/*    </div>*/}
+      {/*    <p className="detail__category">User Interface</p>*/}
+      {/*    <p className="detail__text">*/}
+      {/*      Lorem ipsum dolor sit amet, consectetur adipisicing elit.*/}
+      {/*      Adipisci aperiam, aspernatur atque commodi cum deserunt*/}
+      {/*      dolorem eos ex fugit id impedit, iure maxime molestiae*/}
+      {/*      numquam officia placeat, tempora tenetur velit?*/}
+      {/*    </p>*/}
+      {/*    <button className="button button__green">Show Me</button>*/}
+      {/*  </div>*/}
+      {/*  <div className="detail__item">*/}
+      {/*    <div className="detail__preview">*/}
+      {/*      <img*/}
+      {/*        src={require('../../assets/images/banner-one.jpg')}*/}
+      {/*        alt=""*/}
+      {/*      />*/}
+      {/*    </div>*/}
+      {/*    <p className="detail__category">User Interface</p>*/}
+      {/*    <p className="detail__text">*/}
+      {/*      Lorem ipsum dolor sit amet, consectetur adipisicing elit.*/}
+      {/*      Adipisci aperiam, aspernatur atque commodi cum deserunt*/}
+      {/*      dolorem eos ex fugit id impedit, iure maxime molestiae*/}
+      {/*      numquam officia placeat, tempora tenetur velit?*/}
+      {/*    </p>*/}
+      {/*    <button className="button button__deep_blue">*/}
+      {/*      Show Me*/}
+      {/*    </button>*/}
+      {/*  </div>*/}
+      {/*</OwlCarousel>*/}
     </div>
   );
 }

@@ -23,42 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce76ae03-21a2-4756-8e0c-c6453e06a7f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/kobosafe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/pp.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/yellostargames.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ErrorLabel/ErrorLabel.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ErrorLabel/ErrorLabel.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ErrorLabel/ErrorLabel.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/Form.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/Form.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Publication/Publication.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/Button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/Button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/Button.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/About/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/About/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/About/About.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/About/About.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Blog/Blog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publication/Publication.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Blog/Blog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Blog/Blog.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publication/Publication.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Contact/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contact/Contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Contact/Contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contact/Contact.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/Project.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/Project.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Project/Project.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/Project.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/variables.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +143,7 @@
       <workItem from="1612219170444" duration="29827000" />
       <workItem from="1613219384651" duration="7518000" />
       <workItem from="1613427264146" duration="2283000" />
-      <workItem from="1613479498284" duration="9088000" />
+      <workItem from="1613479498284" duration="9402000" />
     </task>
     <servers />
   </component>
