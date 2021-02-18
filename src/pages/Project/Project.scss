@@ -12,7 +12,7 @@
   &__Heading {
     font-size: 3rem;
     font-weight: bold;
-    margin: 3rem 0;
+    margin: 3rem 0 5rem;
     color: $whiteColor;
   }
   &__title {
@@ -54,7 +54,7 @@
     transition: all .3s ease-in-out;
     @include breakpoint(tablet-landscape-up){
       width: 45%;
-      border-radius: $threeRem;
+      border-radius: $twoRem;
     }
 
     a{
@@ -89,7 +89,7 @@
       }
     }
     p{
-      color: $grayColor;
+      color: $grayShadeColor;
     }
   }
 }

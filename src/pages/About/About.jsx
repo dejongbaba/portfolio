@@ -17,10 +17,10 @@ function About() {
         <span className="gradientFade delay2s">Solve.</span>
       </h4>
       <a
-        href="#contact"
+        href="#portfolio"
         className="about__button fixed__button button__green"
       >
-        Contact Me
+        My Works
       </a>
     </div>
   );

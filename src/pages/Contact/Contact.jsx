@@ -91,7 +91,7 @@ function Contact() {
                 </div>
                 <div className="contact__info_item">
                   <i className="fa fa-2x fa-home" />
-                  <span>80, bola street, ebute metta, lagos</span>
+                  <span>Lagos, Nigeria</span>
                 </div>
                 <div className="contact__info_item">
                   <i className="fa fa-2x fa-address-book" />
