@@ -24,9 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ce76ae03-21a2-4756-8e0c-c6453e06a7f6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/About/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/About/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Contact/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contact/Contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Contact/Contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Contact/Contact.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Project/Project.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/Project.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Project/Project.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Project/Project.scss" afterDir="false" />
     </list>
@@ -149,7 +147,7 @@
       <workItem from="1613219384651" duration="7518000" />
       <workItem from="1613427264146" duration="2283000" />
       <workItem from="1613479498284" duration="10104000" />
-      <workItem from="1613640640644" duration="3992000" />
+      <workItem from="1613640640644" duration="4479000" />
     </task>
     <servers />
   </component>
@@ -178,11 +176,11 @@
     </state>
     <state x="413" y="189" width="613" height="522" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1613344644551" />
     <state x="413" y="190" width="613" height="522" key="find.popup/0.23.1440.797@0.23.1440.797" timestamp="1613640786589" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1613646022073">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1613646564298">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="385" y="196" width="670" height="158" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1613486432271" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1613646022073" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1613646564298" />
   </component>
   <component name="masterDetails">
     <states>

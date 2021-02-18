@@ -6,7 +6,7 @@ function Project() {
     <div className="portfolio" id="portfolio">
       <div className="portfolio__title">Portfolio</div>
       <div className="portfolio__Heading">
-        Look at projects i've been opportune to work on
+        Projects i've worked on
       </div>
 
       <div className="portfolio__items">

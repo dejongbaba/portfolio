@@ -94,7 +94,7 @@
   &__description {
     font-size: $oneRem;
     line-height: 1.4;
-    color: $grayColor;
+    color: $grayShadeColor;
     margin-bottom: $threeRem;
 
     @include breakpoint(tablet-landscape-up){
