@@ -14,7 +14,10 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+    @include breakpoint(desktop-up){
+      margin-bottom: 2rem;
+    }
   }
   &__footer {
     text-align: right;
@@ -41,7 +44,7 @@
     margin-bottom: 4rem;
     @extend %fontWeight600;
     @extend %width80;
-    font-size: 6rem;
+    font-size: 4.5rem;
 
     .gradientFade{
       display: block;
@@ -56,7 +59,7 @@
     }
   }
   &__button {
-    width: 100%;
+    width:100%;
     cursor: pointer;
     display: inline-block;
     line-height: 5rem;
@@ -69,16 +72,14 @@
     @extend %noBorder;
     @extend %fontWeight500;
 
-    @include breakpoint(phone-up){
-      width: 250px;
-    }
-    @include breakpoint(tablet-portrait-up){
-      width: 250px;
-    }
     @include breakpoint(tablet-landscape-up){
       width: 250px;
     }
 
+  }
+
+  &__button.fixed__button{
+    width: 250px;
   }
   &__subsection {
     display: flex;

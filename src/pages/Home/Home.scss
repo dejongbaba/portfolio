@@ -75,9 +75,9 @@
 
   &__avatar_showcase {
     position: relative;
-    width: 250px;
-    height: 250px;
-    margin: 0 0 auto 1rem;
+    width: 260px;
+    height: 260px;
+    margin: 0 0 0 1rem;
 
     background: $lightGreenColor;
     border-radius: $twoRem;
@@ -103,7 +103,7 @@
 
     @extend %headerPadding;
     padding: $twoRem $oneRem;
-    max-width: 60%;
+    max-width:unset;
 
     @include breakpoint(tablet-landscape-up){
       max-width: 54%;
