@@ -52,8 +52,7 @@
     }
   }
   &__top {
-    display: flex;
-    flex-direction: column ;
+    display: block;
 
    @include breakpoint(tablet-landscape-up){
      display: grid;
@@ -69,7 +68,7 @@
   }
   &__info{
     margin-bottom: $fiveRem;
-    margin-right: 0rem;
+    margin-right: 0;
     @include breakpoint(tablet-landscape-up){
       margin-right: $threeRem;
     }

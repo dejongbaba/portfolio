@@ -6,18 +6,15 @@ import Spinner from '../Spinner/Spinner';
 const Input = React.forwardRef(
   ({ name, type, className, value, icon, placeHolder }, ref) => {
     return (
-      <div className="contacts__field">
-        <div className="field__wrap">
-          <input
-            ref={ref}
-            className={`field__input ${className}`}
-            type={type}
-            name={name}
-            value={value}
-            placeholder={placeHolder}
-          />
-          <div className="field__icon">{icon}</div>
-        </div>
+      <div className="">
+        <input
+          ref={ref}
+          className={`contacts__form__field ${className}`}
+          type={type}
+          name={name}
+          value={value}
+          placeholder={placeHolder}
+        />
       </div>
     );
   },
@@ -29,18 +26,19 @@ const Option = ({ title, value }) => {
 
 const Select = ({ name, children }) => {
   return (
-    <div className="contacts__field field">
-      <div className="field__wrap">
-        <select className="field__select" name={name}>
-          {React.cloneElement(children)}
+    <div className=" field">
+      <select
+        className="field__select contacts__form__field"
+        name={name}
+      >
+        {React.cloneElement(children)}
 
-          <option>What are you working on? 2</option>
-        </select>
-        <div className="field__icon">
-          <svg className="icon icon-arrows">
-            {/*<use xlink:href="img/sprite.svg#icon-arrows" />*/}
-          </svg>
-        </div>
+        <option>What are you working on? 2</option>
+      </select>
+      <div className="field__icon">
+        <svg className="icon icon-arrows">
+          {/*<use xlink:href="img/sprite.svg#icon-arrows" />*/}
+        </svg>
       </div>
     </div>
   );
@@ -70,16 +68,14 @@ const Button = ({ text, type, className, loading }) => {
 
 const TextArea = React.forwardRef(({ name, value }, ref) => {
   return (
-    <div className="contacts__field field field_textarea">
-      <div className="field__wrap">
-        <textarea
-          value={value}
-          ref={ref}
-          className="field__textarea"
-          name={name}
-          placeholder="Message"
-        />
-      </div>
+    <div className="field">
+      <textarea
+        value={value}
+        ref={ref}
+        className="contacts__form__field field__textarea"
+        name={name}
+        placeholder="Message"
+      />
     </div>
   );
 });

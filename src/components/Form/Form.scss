@@ -5,6 +5,8 @@
   padding: 0 72px 0 24px;
   min-height: 72px;
   border-radius: 12px;
+  box-sizing: border-box;
+  margin-bottom: $oneRem;
 }
 
 %fieldColors{
@@ -16,8 +18,9 @@
 .contacts__form{
   &__field{
     @extend %size;
-    width: unset;
-
+    @extend %fieldColors;
+    @extend %fontSize18;
+    @extend %fontFamilyPoppins;
   }
 
 
@@ -29,7 +32,7 @@
     margin-bottom: $twoRem;
     @extend %fontSize18;
     @extend %fontFamilyPoppins;
-    width: 190px;
+
 
     @include breakpoint(tablet-landscape-up){
       width: 100%;
@@ -39,7 +42,7 @@
   .field__input{
     height: 72px;
     @extend %size;
-    width: 12rem;
+    width: 100%;
     @extend %fieldColors;
     @extend %fontFamilyPoppins;
     font-size: 18px;
