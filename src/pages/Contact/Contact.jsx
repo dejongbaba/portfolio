@@ -1,15 +1,11 @@
-import React from 'react';
-import { useState } from 'react';
-import './Contact.scss';
-import Form from '../../components/Form/Form';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ErrorLabel from '../../components/ErrorLabel/ErrorLabel';
-import emailjs from 'emailjs-com';
-import { useToasts } from 'react-toast-notifications';
+import Form from '../../components/Form/Form';
+import './Contact.scss';
 
 function Contact() {
   const [loading, setLoading] = useState(false);
-  const { addToast } = useToasts();
 
   const defaultValues = {
     from_email: '',
@@ -24,39 +20,7 @@ function Contact() {
   };
 
   function sendEmail(data) {
-    setLoading(true);
-    console.log(
-      process.env.REACT_APP_SERVICE_ID,
-      process.env.REACT_APP_TEMPLATE_ID,
-      data,
-      process.env.REACT_APP_USER_ID,
-    );
-    emailjs
-      .send(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        data,
-        process.env.REACT_APP_USER_ID,
-      )
-      .then(
-        (result) => {
-          console.log('success', result);
-          setLoading(false);
-          addToast(
-            'Email Sent! I will reach out to you personally!',
-            { appearance: 'success', autoDismiss: true },
-          );
-          reset({ from_email: '', from_name: '', message: '' });
-        },
-        (error) => {
-          setLoading(false);
-          addToast('An Error occurred trying to send the email!', {
-            appearance: 'error',
-            autoDismiss: true,
-          });
-          console.log('error', error);
-        },
-      );
+   
   }
   return (
     <div className="contact" id="contact">
