@@ -8,7 +8,7 @@ function App() {
   AOS.init({ easing: 'ease-in-sine', once: true });
 
   return (
-    <div className="App">
+    <div className="App" id="App">
       <Router>
         <Route path="/" exact>
           <Layout />
