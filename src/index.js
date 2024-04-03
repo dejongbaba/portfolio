@@ -9,3 +9,11 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+/* 
+***** TODO What I'm about to do 
+ 
+  * remove extra packages 
+  * create layout for page
+  * layout the write up with placeholder
+  * remove all components 
+*/

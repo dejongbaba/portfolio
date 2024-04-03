@@ -1,11 +1,10 @@
-@import "../../App";
+/* @import "../../App";
 
-%button {
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: rem-calc(16);
-  cursor: pointer;
   background-color: color(green);
   text-transform: uppercase;
   cursor: pointer;
@@ -13,7 +12,6 @@
   max-height: rem-calc(40);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  //padding: 10px 20px;
   font-size: rem-calc(14);
   border: 1px solid transparent;
   color: color(white);
@@ -96,4 +94,4 @@
   display: flex;
   justify-content: center;
   margin: 1rem;
-}
+} */

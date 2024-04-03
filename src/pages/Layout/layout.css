@@ -1,0 +1,119 @@
+.layout {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 6rem 0;
+  /*color: white;*/
+  min-height: 100vh;
+  position: relative;
+}
+/* #070708 bg color
+   text color #96969E
+*/
+/* rgb(161 161 170/var(--tw-text-opacity)) text color */
+.header-write-up {
+  font-family: 'Poppins', serif;
+}
+.header-title {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.header-subtext {
+  color: var(--gray, #96969e);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.about,.header,.contact,.connect{
+  margin-bottom:3rem;
+}
+.about-subtext ,.portfolio-subtext{
+  color: var(--gray, #96969e);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.header-img {
+  width: 50px;
+  cursor: pointer;
+  height: 50px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  animation: roundTheSun 10s infinite forwards ease;
+}
+
+/*About section , portfolio section */
+.about .about-subtext{
+  line-height: 2;
+  font-size: 1rem;
+}
+.portfolio,.portfolio-subtext{
+  font-size: 1rem;
+  line-height: 2;
+}
+.portfolio-list {
+  margin-bottom: 1rem;
+  /*margin-left: 2rem;*/
+}
+.footer {
+  position: fixed;
+  font-size: 0.8rem;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.footer span {
+  color: red;
+}
+
+/*Connect section */
+
+.connect-header ,.contact-header, .about-header,.portfolio-header{
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.connect .icons {
+  margin: auto;
+  display: flex;
+}
+.connect .icons a {
+  font-size: 0.8rem;
+  margin-right: 10px;
+  color: var(--gray);
+}
+.contact .contact-subtext a ,.portfolio .portfolio-list a ,.portfolio .portfolio-subtext a {
+  color: var(--gray);
+  transition: all .8s ease-in-out;
+}
+.connect .icons a:hover ,
+.contact .contact-subtext a:hover ,
+.portfolio .portfolio-list a:hover,.portfolio .portfolio-subtext a:hover{
+ color: #525259;
+}
+
+@media all and (min-width: 768px) {
+  .layout {
+    max-width: 50%;
+  }
+  .header{
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .header-img {
+    width: 50px;
+    height: 50px;
+  }
+}
