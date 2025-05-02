@@ -1,68 +1,123 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Modern Portfolio Website
 
-## Available Scripts
+A clean, modern, and responsive portfolio website for designers and content creators. Built with React 18, TypeScript, Styled Components, and Framer Motion.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- 🌗 Light/Dark mode toggle
+- 🖱️ Custom cursor with animation
+- ✨ Smooth animations with Framer Motion
+- 📱 Fully responsive design
+- 🔄 Modern project slider
+- 📬 Contact form
+- 📝 Blog section
+- 🎨 Clean and minimalist UI
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- Node.js (v14 or higher)
+- npm or yarn
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. Clone this repository
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone <repository-url>
+cd portfolio
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+2. Install dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+# or
+yarn
+```
 
-### `npm run eject`
+3. Start the development server
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm start
+# or
+yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Open your browser and visit `http://localhost:3000`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Project Structure
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+src/
+├── assets/         # Static assets like images
+├── components/     # React components
+│   ├── About/
+│   ├── Blog/
+│   ├── Contact/
+│   ├── ContentCreation/
+│   ├── CustomCursor/
+│   ├── Footer/
+│   ├── Header/
+│   ├── Hero/
+│   ├── Projects/
+│   ├── Testimonials/
+│   └── UI/         # Reusable UI components
+├── theme/          # Theme configuration and styling
+└── types.ts        # TypeScript types
+```
 
-## Learn More
+## Customization
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Adding Your Content
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Replace images in the `public/assets/images/` directory with your own images
+2. Update the text content in each component file
+3. Modify the theme colors in `src/theme/theme.ts` to match your brand
 
-### Code Splitting
+### Adding Projects
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Add your projects to the `projectsData` array in `src/components/Projects/Projects.tsx`:
 
-### Analyzing the Bundle Size
+```typescript
+const projectsData = [
+  {
+    id: '01',
+    title: 'Your Project Title',
+    image: '/assets/images/your-project-image.jpg',
+    category: 'Your Category',
+  },
+  // Add more projects...
+];
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Deployment
 
-### Making a Progressive Web App
+Build the application for production:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```bash
+npm run build
+# or
+yarn build
+```
 
-### Advanced Configuration
+The build artifacts will be stored in the `build/` directory.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Technologies Used
 
-### Deployment
+- React 18
+- TypeScript
+- Styled Components
+- Framer Motion
+- React Hook Form
+- React Scroll
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## License
 
-### `npm run build` fails to minify
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Acknowledgments
+
+- Design inspiration from various portfolio websites
+- Icons from various icon libraries
