@@ -4,7 +4,15 @@
 /node_modules
 /.pnp
 .pnp.js
-
+.agents
+.idea
+.vscode
+.tanstack
+.cursorrules
+skills-lock.json
+scripts
+docs
+build
 # testing
 /coverage
 

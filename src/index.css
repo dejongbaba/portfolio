@@ -4,59 +4,148 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
+    /* Tailwind HSL tokens */
+    --background: 0 0% 1%;
+    --foreground: 0 0% 100%;
+    --muted: 215 20% 65%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 150 100% 43%;
+    --border: 215 20% 65%;
+
+    /* Light mode theme tokens */
+    --bg-base: #f5f5f5;
+    --bg-pill: rgba(240, 240, 244, 0.9);
+    --bg-card: #ebebeb;
+    --bg-terminal: #e8e8e8;
+    --text-primary: #0f0f0f;
+    --text-secondary: rgba(15, 15, 20, 0.5);
+    --text-muted: rgba(15, 15, 20, 0.3);
+    --border-subtle: rgba(0, 0, 0, 0.09);
+    --border-card: rgba(0, 0, 0, 0.07);
+    --border-hover: rgba(0, 0, 0, 0.14);
+    --bg-active-pill: rgba(0, 0, 0, 0.07);
+    --shadow-pill: 0 4px 24px rgba(0, 0, 0, 0.08);
+    --shadow-status: 0 2px 12px rgba(0, 0, 0, 0.08);
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    /* Dark mode theme tokens */
+    --bg-base: #030303;
+    --bg-pill: rgba(10, 10, 10, 0.75);
+    --bg-card: #0d0d0d;
+    --bg-terminal: #0d0d0d;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(199, 202, 216, 0.55);
+    --text-muted: rgba(199, 202, 216, 0.35);
+    --border-subtle: rgba(199, 202, 216, 0.08);
+    --border-card: rgba(199, 202, 216, 0.06);
+    --border-hover: rgba(199, 202, 216, 0.12);
+    --bg-active-pill: rgba(199, 202, 216, 0.12);
+    --shadow-pill: 0 4px 24px rgba(0, 0, 0, 0.4);
+    --shadow-status: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  * {
+    @apply border-white/10;
+  }
+
+  body {
+    @apply antialiased font-sans selection:bg-accent-green/20 selection:text-accent-green;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    position: relative;
+    overflow-x: hidden;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+  
+  /* Grain Texture Overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); */
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 1000;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+  /* Custom Cursor - Sebiomo Style */
+  .custom-cursor {
+    width: 6px;
+    height: 6px;
+    background-color: #00DB6D;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.1s ease-out;
+    mix-blend-mode: screen;
   }
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Hanken Grotesk', 'Inter', 'Poppins', 'Playfair Display', sans-serif;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
-    scroll-behavior: smooth;
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply backdrop-blur-sm rounded-3xl overflow-hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    transition: background 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+  }
+  .bento-card:hover {
+    border-color: var(--border-hover);
+  }
+
+  .pill-nav {
+    @apply backdrop-blur-md rounded-full px-4 py-2 flex items-center gap-4;
+    background: var(--bg-pill);
+    border: 1px solid var(--border-subtle);
+    transition: background 0.35s ease, border-color 0.35s ease;
+  }
+
+  .glass-pill {
+    @apply backdrop-blur-md transition-all;
+    background: var(--bg-pill);
+    border: 1px solid var(--border-subtle);
+  }
+  .glass-pill:hover {
+    border-color: var(--border-hover);
+  }
+
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+
+  .heading-primary {
+    @apply text-4xl md:text-5xl font-bold tracking-tight;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
 }
