@@ -57,7 +57,7 @@ function WorkPage() {
         <meta name="description" content="Selected work history — companies, roles, and impact." />
       </Helmet>
 
-      <section className="px-2 md:px-6 max-w-2xl mx-auto">
+      <section className="px-6 max-w-2xl mx-auto">
         <motion.div
           variants={containerVariants}
           initial="hidden"

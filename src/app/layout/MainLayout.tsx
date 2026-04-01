@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from '@/app/layout/Nav';
-import ThemeToggle from '@/components/shared/ThemeToggle';
+// import ThemeToggle from '@/components/shared/ThemeToggle';
 import CursorTrail from '@/components/shared/CursorTrail';
 import { useTheme } from '@/context/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -87,7 +87,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
               );
             })}
           </nav>
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
         </div>
 
         {/* Row 2: Status pills */}
@@ -159,7 +159,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       <main>{children}</main>
 
       {/* Floating "Ask me anything" widget — sebiomo.com style */}
-      <div className="fixed bottom-6 right-6 z-[100] flex items-center gap-3">
+      {/* <div className="fixed bottom-6 right-6 z-[100] flex items-center gap-3">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -195,7 +195,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             </svg>
           </button>
         </motion.div>
-      </div>
+      </div> */}
 
 
     </div>

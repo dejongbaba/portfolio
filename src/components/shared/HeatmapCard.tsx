@@ -1,51 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+// import { motion } from 'framer-motion';
 
-interface ContributionDay {
-  color: string;
-  contributionCount: number;
-  contributionLevel: string;
-  date: string;
-}
+// interface ContributionDay {
+//   color: string;
+//   contributionCount: number;
+//   contributionLevel: string;
+//   date: string;
+// }
 
 const HeatmapCard: React.FC = () => {
-  const [data, setData] = useState<number[]>([]);
-  const [totalContributions, setTotalContributions] = useState<number | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [data, setData] = useState<number[]>([]);
+  // const [totalContributions, setTotalContributions] = useState<number | null>(null);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchContributions = async () => {
-      try {
-        const response = await fetch('https://github-contributions-api.deno.dev/dejongbaba.json');
-        const result = await response.json();
-        
-        // Map contributionLevel to 0-4
-        const levelMap: Record<string, number> = {
-          'NONE': 0,
-          'FIRST_QUARTILE': 1,
-          'SECOND_QUARTILE': 2,
-          'THIRD_QUARTILE': 3,
-          'FOURTH_QUARTILE': 4
-        };
+  // useEffect(() => {
+  //   const fetchContributions = async () => {
+  //     try {
+  //       const response = await fetch('https://github-contributions-api.deno.dev/dejongbaba.json');
+  //       const result = await response.json();
 
-        const flattenedData = result.contributions.flat().map((day: ContributionDay) => 
-          levelMap[day.contributionLevel] || 0
-        );
+  //       // Map contributionLevel to 0-4
+  //       const levelMap: Record<string, number> = {
+  //         'NONE': 0,
+  //         'FIRST_QUARTILE': 1,
+  //         'SECOND_QUARTILE': 2,
+  //         'THIRD_QUARTILE': 3,
+  //         'FOURTH_QUARTILE': 4
+  //       };
 
-        setData(flattenedData);
-        setTotalContributions(result.totalContributions);
-      } catch (error) {
-        console.error('Failed to fetch contributions:', error);
-        // Fallback to random data on error
-        const fallback = Array.from({ length: 52 * 7 }, () => Math.floor(Math.random() * 4));
-        setData(fallback);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  //       const flattenedData = result.contributions.flat().map((day: ContributionDay) => 
+  //         levelMap[day.contributionLevel] || 0
+  //       );
 
-    fetchContributions();
-  }, []);
+  //       setData(flattenedData);
+  //       setTotalContributions(result.totalContributions);
+  //     } catch (error) {
+  //       console.error('Failed to fetch contributions:', error);
+  //       // Fallback to random data on error
+  //       const fallback = Array.from({ length: 52 * 7 }, () => Math.floor(Math.random() * 4));
+  //       setData(fallback);
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
+
+  //   fetchContributions();
+  // }, []);
 
   const getColor = (level: number) => {
     switch (level) {
@@ -60,7 +60,7 @@ const HeatmapCard: React.FC = () => {
 
   return (
     <section className="px-6 py-12 max-w-2xl mx-auto">
-      <div className="flex items-center justify-between mb-6">
+      {/* <div className="flex items-center justify-between mb-6">
         <h3
           className="text-[10px] font-bold uppercase tracking-[0.2em]"
           style={{ color: 'var(--text-secondary)' }}
@@ -98,7 +98,7 @@ const HeatmapCard: React.FC = () => {
             ))
           )}
         </div>
-      </div>
+      </div> */}
 
       {/* Footer */}
       <footer className="pt-20 pb-16 px-2 md:px-6 max-w-2xl mx-auto">
@@ -144,7 +144,7 @@ const HeatmapCard: React.FC = () => {
             Tools
           </p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            {['TypeScript', 'Node.js', 'React', 'NestJS', 'PostgreSQL', 'MongoDB', 'Docker', 'Kubernetes', 'AWS'].map((t) => (
+            {['TypeScript', 'Node.js', 'React', 'NestJS', 'PostgreSQL', 'MongoDB', 'Docker', 'Kubernetes', 'AWS', 'C#'].map((t) => (
               <span
                 key={t}
                 className="text-sm"

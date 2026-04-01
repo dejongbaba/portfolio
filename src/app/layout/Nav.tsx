@@ -47,9 +47,9 @@ const Nav: React.FC = () => {
           }}
           className="fixed top-0 left-0 right-0 gap-2 z-[100] pointer-events-none"
         >
-          <div className='max-w-2xl mx-auto w-full flex items-center justify-between px-6 py-4'>
+          <div className='max-w-2xl mx-auto w-full md:flex items-center justify-between px-6 py-4'>
             <nav
-              className="pointer-events-auto flex items-center gap-1 px-1.5 py-1.5 rounded-full"
+              className="pointer-events-auto inline-flex mb-4 md:mb-0 md:flex items-center gap-1 px-1.5 py-1.5 rounded-full"
               style={{
                 background: 'var(--bg-pill)',
                 backdropFilter: 'blur(12px)',
@@ -65,7 +65,7 @@ const Nav: React.FC = () => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="relative px-3.5 py-1 rounded-full text-sm font-medium transition-colors duration-200 z-10"
+                    className="relative px-3.5 py-1 rounded-full text-xs md:text-sm font-medium transition-colors duration-200 z-10"
                     style={{ color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)' }}
                   >
                     {isActive && (
@@ -83,13 +83,12 @@ const Nav: React.FC = () => {
             </nav>
 
             <div className="pointer-events-auto flex items-center gap-2">
-              {/* Theme toggle */}
-              <ThemeToggle />
+
 
               {/* Available for work */}
               <motion.button
                 whileTap={{ scale: 0.96 }}
-                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-sm font-medium"
+                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium"
                 style={{
                   background: 'var(--bg-pill)',
                   backdropFilter: 'blur(12px)',
@@ -111,7 +110,7 @@ const Nav: React.FC = () => {
               <motion.button
                 whileTap={{ scale: 0.96 }}
                 onClick={copyEmail}
-                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-sm font-medium"
+                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium"
                 style={{
                   background: 'var(--bg-pill)',
                   backdropFilter: 'blur(12px)',
@@ -145,6 +144,9 @@ const Nav: React.FC = () => {
                   )}
                 </AnimatePresence>
               </motion.button>
+
+              {/* Theme toggle */}
+              <ThemeToggle />
             </div>
           </div>
         </motion.header>

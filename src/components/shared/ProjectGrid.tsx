@@ -5,7 +5,6 @@ interface Project {
   title: string;
   description: string;
   company: string;
-  image: string;
   href: string;
 }
 
@@ -14,42 +13,36 @@ const projects: Project[] = [
     title: 'Sendbox Delivery',
     description: 'Multi-region logistics and delivery platform powering local and international shipments',
     company: 'Sendbox',
-    image: 'https://picsum.photos/seed/sendbox-delivery/800/600',
     href: 'https://business.sendbox.co/',
   },
   {
     title: 'Sendbox Marketplace',
     description: 'Multi-vendor e-commerce marketplace with integrated logistics and payment rails',
     company: 'Sendbox',
-    image: 'https://picsum.photos/seed/sendbox-market/800/600',
     href: 'https://marketplace.sendbox.co/',
   },
   {
     title: 'Backup Cash',
     description: 'Technology-driven savings platform offering disciplined saving with competitive interest rates',
     company: 'Personal',
-    image: 'https://picsum.photos/seed/backup-cash/800/600',
     href: 'https://www.mybackupcash.com/',
   },
   {
     title: 'Payfasta',
     description: 'Supply chain fintech giving businesses access to vendor credit across multiple countries',
     company: 'Personal',
-    image: 'https://picsum.photos/seed/payfasta/800/600',
     href: 'https://patek.netlify.app/',
   },
   {
     title: 'Kobo Safe',
     description: 'Logistics safety management system for fleet operators across West Africa',
     company: 'Kobo360',
-    image: 'https://picsum.photos/seed/kobo-safe/800/600',
     href: 'https://www.safe.kobo360.com/',
   },
   {
     title: 'Techfront',
     description: 'Developer education platform with courses, mentorship, and community for engineers',
     company: 'Personal',
-    image: 'https://picsum.photos/seed/techfront/800/600',
     href: 'https://techfrontio-frontend.onrender.com/',
   },
 ];
@@ -76,17 +69,36 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
         transition: 'border-color 0.3s ease, background 0.35s ease',
       }}
     >
-      {/* Image area */}
-      <div className="aspect-[4/3] overflow-hidden relative">
-        <motion.img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover"
-          animate={{
-            filter: hovered ? 'grayscale(0) brightness(0.9)' : 'grayscale(1) brightness(0.5)',
-            scale: hovered ? 1.03 : 1,
+      {/* Icon area */}
+      <div 
+        className="aspect-[4/3] flex items-center justify-center relative overflow-hidden"
+        style={{ 
+          background: hovered ? 'var(--bg-terminal)' : 'var(--bg-card)',
+          borderBottom: '1px solid var(--border-subtle)',
+          transition: 'background 0.4s ease'
+        }}
+      >
+        <motion.span
+          className="text-5xl font-bold select-none"
+          style={{ 
+            color: hovered ? 'var(--text-primary)' : 'var(--text-secondary)',
+            opacity: hovered ? 1 : 0.4
           }}
-          transition={{ duration: 0.6, ease: 'easeInOut' }}
+          animate={{
+            scale: hovered ? 1.15 : 1,
+            rotate: hovered ? 5 : 0,
+          }}
+          transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+        >
+          {project.title.charAt(0)}
+        </motion.span>
+        
+        {/* Subtle gradient overlay for 'shaded' look */}
+        <div 
+          className="absolute inset-0 pointer-events-none opacity-20"
+          style={{ 
+            background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%)' 
+          }}
         />
       </div>
 

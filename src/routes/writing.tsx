@@ -45,7 +45,7 @@ function WritingPage() {
         <meta name="description" content="Articles on JavaScript, TypeScript, React, and building scalable systems." />
       </Helmet>
 
-      <section className="px-2 md:px-6 max-w-2xl mx-auto">
+      <section className="px-6 max-w-2xl mx-auto">
         <motion.div
           variants={containerVariants}
           initial="hidden"
