@@ -71,7 +71,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="relative px-3.5 py-1 rounded-full text-xs md:text-sm font-medium transition-colors duration-200 z-10"
+                  className="relative px-3.5 py-1 rounded-full text-xs  font-medium transition-colors duration-200 z-10"
                   style={{ color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)' }}
                 >
                   {isActive && (
@@ -96,7 +96,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             {/* Available for work */}
             <motion.button
               whileTap={{ scale: 0.96 }}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs  font-medium"
               style={{
                 background: 'var(--bg-pill)',
                 backdropFilter: 'blur(12px)',
@@ -118,7 +118,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             <motion.button
               whileTap={{ scale: 0.96 }}
               onClick={copyEmail}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs  font-medium"
               style={{
                 background: 'var(--bg-pill)',
                 backdropFilter: 'blur(12px)',
@@ -177,7 +177,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
           <input
             type="text"
             placeholder="Ask me anything"
-            className="bg-transparent border-none outline-none text-xs md:text-sm w-40 md:w-48"
+            className="bg-transparent border-none outline-none text-xs  w-40 md:w-48"
             style={{
               color: 'rgba(199, 202, 216, 0.7)',
               fontFamily: '"Google Sans", "Inter", sans-serif',
