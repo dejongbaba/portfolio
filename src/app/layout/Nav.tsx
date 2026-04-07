@@ -65,7 +65,7 @@ const Nav: React.FC = () => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="relative px-3.5 py-1 rounded-full text-xs md:text-sm font-medium transition-colors duration-200 z-10"
+                    className="relative px-3.5 py-1 rounded-full text-xs  font-medium transition-colors duration-200 z-10"
                     style={{ color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)' }}
                   >
                     {isActive && (
@@ -88,7 +88,7 @@ const Nav: React.FC = () => {
               {/* Available for work */}
               <motion.button
                 whileTap={{ scale: 0.96 }}
-                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium"
+                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs  font-medium"
                 style={{
                   background: 'var(--bg-pill)',
                   backdropFilter: 'blur(12px)',
@@ -110,7 +110,7 @@ const Nav: React.FC = () => {
               <motion.button
                 whileTap={{ scale: 0.96 }}
                 onClick={copyEmail}
-                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium"
+                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs  font-medium"
                 style={{
                   background: 'var(--bg-pill)',
                   backdropFilter: 'blur(12px)',
