@@ -13,6 +13,9 @@ skills-lock.json
 scripts
 docs
 build
+dist
+
+agents.md
 # testing
 /coverage
 
