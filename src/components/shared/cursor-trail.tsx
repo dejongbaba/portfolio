@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/theme-context';
 
 interface Particle {
   x: number;
@@ -71,7 +71,7 @@ const CursorTrail: React.FC = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const dark = document.documentElement.classList.contains('dark');
-      const headColor = dark ? '#00DB6D' : '#00AA55';
+      const headColor = dark ? '#3B82F6' : '#2563EB';
       const tailColorStart = dark ? 'rgba(0,219,109,' : 'rgba(0,160,80,';
 
       particles.current = particles.current.filter(p => p.life > 0.02);
