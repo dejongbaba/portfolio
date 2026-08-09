@@ -1,24 +1,24 @@
-# Modern Portfolio Website
+# Adedeji Agunbiade — Portfolio
 
-A clean, modern, and responsive portfolio website for designers and content creators. Built with React 18, TypeScript, Styled Components, and Framer Motion.
+A minimal, responsive portfolio site for Adedeji Agunbiade (Senior Software Engineer · Fullstack · Lagos, NG). Built with React 18, TypeScript, Vite, Tailwind CSS, TanStack Router, and Framer Motion.
 
 ## Features
 
-- 🌗 Light/Dark mode toggle
-- 🖱️ Custom cursor with animation
-- ✨ Smooth animations with Framer Motion
-- 📱 Fully responsive design
-- 🔄 Modern project slider
-- 📬 Contact form
-- 📝 Blog section
-- 🎨 Clean and minimalist UI
+- 🎨 Light/dark mode toggle with a smooth animated "wash" transition (preference persisted in `localStorage`)
+- 🔊 Ambient sound toggle — generative Web Audio loop (ocean noise + synth chords) that reacts to theme changes
+- 🖱️ Custom cursor trail
+- 🕐 Live clock and weather (Open-Meteo API) in the hero, timezone-aware for Lagos
+- 🧪 "Currently Building" section with terminal-style `git log` cards
+- 🗂️ Project grid + dedicated `/work` history and `/writing` articles pages
+- 🚀 File-based routing with TanStack Router (typed routes)
+- 📱 Fully responsive, reduced-motion aware
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
-- npm or yarn
+- Node.js (v18 or higher)
+- npm
 
 ### Installation
 
@@ -33,91 +33,68 @@ cd portfolio
 
 ```bash
 npm install
-# or
-yarn
 ```
 
 3. Start the development server
 
 ```bash
-npm start
-# or
-yarn start
+npm run dev
 ```
 
-4. Open your browser and visit `http://localhost:3000`
+4. Open your browser and visit `http://localhost:5173`
+
+## Scripts
+
+| Command           | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start the Vite dev server            |
+| `npm run build`   | Type-check then build for production |
+| `npm run preview` | Preview the production build         |
+
+Build artifacts are emitted to the `dist/` directory.
 
 ## Project Structure
 
 ```
 src/
-├── assets/         # Static assets like images
-├── components/     # React components
-│   ├── About/
-│   ├── Blog/
-│   ├── Contact/
-│   ├── ContentCreation/
-│   ├── CustomCursor/
-│   ├── Footer/
-│   ├── Header/
-│   ├── Hero/
-│   ├── Projects/
-│   ├── Testimonials/
-│   └── UI/         # Reusable UI components
-├── theme/          # Theme configuration and styling
-└── types.ts        # TypeScript types
+├── app/
+│   └── layout/        # MainLayout, Nav
+├── components/
+│   └── shared/        # Hero, ProjectGrid, CurrentlyBuilding, ThemeToggle, SoundToggle, CursorTrail, HeatmapCard
+├── context/           # ThemeContext, SoundContext
+├── lib/               # Utilities
+├── routes/            # TanStack Router file routes (/, /work, /writing)
+├── routeTree.gen.ts   # Generated route tree (do not edit)
+└── index.tsx          # App entry
 ```
 
 ## Customization
 
-### Adding Your Content
+### Content
 
-1. Replace images in the `public/assets/images/` directory with your own images
-2. Update the text content in each component file
-3. Modify the theme colors in `src/theme/theme.ts` to match your brand
+- Projects: edit the `projects` array in `src/components/shared/ProjectGrid.tsx`
+- Currently building / built list: `src/components/shared/CurrentlyBuilding.tsx`
+- Work history: `src/routes/work.tsx`
+- Articles: `src/routes/writing.tsx`
+- Bio, location, and socials: `src/components/shared/Hero.tsx`, `src/components/shared/HeatmapCard.tsx`
 
-### Adding Projects
+### Styling
 
-Add your projects to the `projectsData` array in `src/components/Projects/Projects.tsx`:
-
-```typescript
-const projectsData = [
-  {
-    id: '01',
-    title: 'Your Project Title',
-    image: '/assets/images/your-project-image.jpg',
-    category: 'Your Category',
-  },
-  // Add more projects...
-];
-```
-
-## Deployment
-
-Build the application for production:
-
-```bash
-npm run build
-# or
-yarn build
-```
-
-The build artifacts will be stored in the `build/` directory.
+- Theme tokens (colors, shadows) live in `src/index.css` under `:root` and `.dark`
+- Tailwind theme (fonts, accent colors, animations) is configured in `tailwind.config.js`
 
 ## Technologies Used
 
-- React 18
-- TypeScript
-- Styled Components
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- TanStack Router
 - Framer Motion
-- React Hook Form
-- React Scroll
+- Radix UI primitives
+- react-hook-form + zod
+- lucide-react icons
+- react-helmet-async
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Design inspiration from various portfolio websites
-- Icons from various icon libraries
