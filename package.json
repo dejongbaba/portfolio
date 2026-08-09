@@ -21,25 +21,33 @@
     "react-dom": "^18.2.0",
     "react-helmet-async": "^3.0.0",
     "react-hook-form": "^7.55.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "shadcn": "^4.16.2",
     "tailwind-merge": "^2.2.1",
-    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.0.0",
     "zod": "^3.22.4"
   },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "@tanstack/router-plugin": "latest",
+    "@testing-library/jest-dom": "^7.0.0",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "latest",
-    "autoprefixer": "^10.4.17",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1",
-    "vite": "latest"
+    "jsdom": "^30.0.1",
+    "tailwindcss": "^4.3.3",
+    "vite": "latest",
+    "vitest": "^4.1.10"
   }
 }
