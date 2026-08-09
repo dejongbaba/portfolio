@@ -1,64 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// ─── Git log data ──────────────────────────────────────────────────────────────
-const gitLogs: Record<string, { date: string; msg: string }[]> = {
-  techfront: [
-    { date: 'Mar 26', msg: 'Add TypeScript course module' },
-    { date: 'Mar 18', msg: 'User progress tracking dashboard' },
-    { date: 'Mar 10', msg: 'Mentor session scheduling feature' },
-    { date: 'Feb 28', msg: 'Payment integration for premium courses' },
-    { date: 'Feb 14', msg: 'Mobile-responsive layout improvements' },
-  ],
-  olivekiddies: [
-    { date: 'Mar 22', msg: 'Interactive quiz module for ages 5–7' },
-    { date: 'Mar 12', msg: 'Parent dashboard redesign' },
-    { date: 'Feb 25', msg: 'Lesson load performance improvements' },
-    { date: 'Feb 10', msg: 'New content pack: shapes and colours' },
-    { date: 'Jan 30', msg: 'Auth flow refactor and session persistence' },
-  ],
-};
-
-// ─── Terminal card ─────────────────────────────────────────────────────────────
-const TerminalCard: React.FC<{ project: string }> = ({ project }) => {
-  const logs = gitLogs[project] || [];
-  return (
-    <div
-      className="rounded-xl overflow-hidden mt-3 font-mono text-[11px]"
-      style={{
-        background: 'var(--bg-terminal)',
-        border: '1px solid var(--border-card)',
-        transition: 'background 0.35s ease, border-color 0.35s ease',
-      }}
-    >
-      {/* Toolbar */}
-      <div
-        className="flex items-center justify-between px-4 py-2.5"
-        style={{ borderBottom: '1px solid var(--border-card)' }}
-      >
-        <div className="flex items-center gap-2">
-          <span style={{ color: '#00DB6D' }}>$</span>
-          <span style={{ color: 'var(--text-secondary)' }}>git log --oneline</span>
-          <span
-            className="inline-block w-[7px] h-[13px] ml-0.5"
-            style={{ background: '#00DB6D', animation: 'pulse 1.2s ease-in-out infinite' }}
-          />
-        </div>
-        <span style={{ color: 'var(--text-muted)', fontSize: 10 }}>▼</span>
-      </div>
-      {/* Log lines */}
-      <div className="px-4 py-3 space-y-2">
-        {logs.map((log, i) => (
-          <div key={i} className="flex gap-4">
-            <span className="shrink-0" style={{ color: 'rgba(0, 219, 109, 0.7)' }}>{log.date}</span>
-            <span style={{ color: 'var(--text-secondary)' }}>{log.msg}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
 // ─── Data ──────────────────────────────────────────────────────────────────────
 const buildingItems = [
   {
@@ -66,14 +8,12 @@ const buildingItems = [
     href: 'https://techfrontio-frontend.onrender.com/',
     description: 'Developer education platform — courses, mentorship, and community',
     meta: null,
-    terminalKey: 'techfront',
   },
   {
     title: 'Olive Kiddies',
     href: 'https://olivekiddies-frontend-live.onrender.com/',
     description: 'Interactive learning platform for young children',
     meta: null,
-    terminalKey: 'olivekiddies',
   },
 ];
 
@@ -177,7 +117,7 @@ const CurrentlyBuilding: React.FC = () => (
               <span className="text-xs flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
                 <span
                   className="inline-block w-1.5 h-1.5 rounded-full"
-                  style={{ background: '#00DB6D', boxShadow: '0 0 4px #00DB6D' }}
+                  style={{ background: '#3B82F6', boxShadow: '0 0 4px #3B82F6' }}
                 />
                 {item.meta}
               </span>
@@ -186,7 +126,6 @@ const CurrentlyBuilding: React.FC = () => (
           <p className="text-[13px] mt-0.5 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
             {item.description}
           </p>
-          {item.terminalKey && <TerminalCard project={item.terminalKey} />}
         </motion.div>
       ))}
     </motion.div>

@@ -13,6 +13,10 @@ import { Route as WritingRouteImport } from './routes/writing'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WritingIndexRouteImport } from './routes/writing.index'
+import { Route as WorkIndexRouteImport } from './routes/work.index'
+import { Route as WritingSlugRouteImport } from './routes/writing.$slug'
+import { Route as WorkSlugRouteImport } from './routes/work.$slug'
 
 const WritingRoute = WritingRouteImport.update({
   id: '/writing',
@@ -34,39 +38,86 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WritingIndexRoute = WritingIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => WritingRoute,
+} as any)
+const WorkIndexRoute = WorkIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => WorkRoute,
+} as any)
+const WritingSlugRoute = WritingSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => WritingRoute,
+} as any)
+const WorkSlugRoute = WorkSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => WorkRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/work': typeof WorkRoute
-  '/writing': typeof WritingRoute
+  '/work': typeof WorkRouteWithChildren
+  '/writing': typeof WritingRouteWithChildren
+  '/work/$slug': typeof WorkSlugRoute
+  '/writing/$slug': typeof WritingSlugRoute
+  '/work/': typeof WorkIndexRoute
+  '/writing/': typeof WritingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/work': typeof WorkRoute
-  '/writing': typeof WritingRoute
+  '/work/$slug': typeof WorkSlugRoute
+  '/writing/$slug': typeof WritingSlugRoute
+  '/work': typeof WorkIndexRoute
+  '/writing': typeof WritingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/work': typeof WorkRoute
-  '/writing': typeof WritingRoute
+  '/work': typeof WorkRouteWithChildren
+  '/writing': typeof WritingRouteWithChildren
+  '/work/$slug': typeof WorkSlugRoute
+  '/writing/$slug': typeof WritingSlugRoute
+  '/work/': typeof WorkIndexRoute
+  '/writing/': typeof WritingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/work' | '/writing'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/work'
+    | '/writing'
+    | '/work/$slug'
+    | '/writing/$slug'
+    | '/work/'
+    | '/writing/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/work' | '/writing'
-  id: '__root__' | '/' | '/about' | '/work' | '/writing'
+  to: '/' | '/about' | '/work/$slug' | '/writing/$slug' | '/work' | '/writing'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/work'
+    | '/writing'
+    | '/work/$slug'
+    | '/writing/$slug'
+    | '/work/'
+    | '/writing/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  WorkRoute: typeof WorkRoute
-  WritingRoute: typeof WritingRoute
+  WorkRoute: typeof WorkRouteWithChildren
+  WritingRoute: typeof WritingRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -99,14 +150,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/writing/': {
+      id: '/writing/'
+      path: '/'
+      fullPath: '/writing/'
+      preLoaderRoute: typeof WritingIndexRouteImport
+      parentRoute: typeof WritingRoute
+    }
+    '/work/': {
+      id: '/work/'
+      path: '/'
+      fullPath: '/work/'
+      preLoaderRoute: typeof WorkIndexRouteImport
+      parentRoute: typeof WorkRoute
+    }
+    '/writing/$slug': {
+      id: '/writing/$slug'
+      path: '/$slug'
+      fullPath: '/writing/$slug'
+      preLoaderRoute: typeof WritingSlugRouteImport
+      parentRoute: typeof WritingRoute
+    }
+    '/work/$slug': {
+      id: '/work/$slug'
+      path: '/$slug'
+      fullPath: '/work/$slug'
+      preLoaderRoute: typeof WorkSlugRouteImport
+      parentRoute: typeof WorkRoute
+    }
   }
 }
+
+interface WorkRouteChildren {
+  WorkSlugRoute: typeof WorkSlugRoute
+  WorkIndexRoute: typeof WorkIndexRoute
+}
+
+const WorkRouteChildren: WorkRouteChildren = {
+  WorkSlugRoute: WorkSlugRoute,
+  WorkIndexRoute: WorkIndexRoute,
+}
+
+const WorkRouteWithChildren = WorkRoute._addFileChildren(WorkRouteChildren)
+
+interface WritingRouteChildren {
+  WritingSlugRoute: typeof WritingSlugRoute
+  WritingIndexRoute: typeof WritingIndexRoute
+}
+
+const WritingRouteChildren: WritingRouteChildren = {
+  WritingSlugRoute: WritingSlugRoute,
+  WritingIndexRoute: WritingIndexRoute,
+}
+
+const WritingRouteWithChildren =
+  WritingRoute._addFileChildren(WritingRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  WorkRoute: WorkRoute,
-  WritingRoute: WritingRoute,
+  WorkRoute: WorkRouteWithChildren,
+  WritingRoute: WritingRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

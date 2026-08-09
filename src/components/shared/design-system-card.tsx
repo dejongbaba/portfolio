@@ -8,7 +8,7 @@ const DesignSystemCard: React.FC = () => {
           <div className="flex gap-3">
             <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/5" />
             <div className="w-8 h-8 rounded-full bg-black/10 dark:bg-white/10" />
-            <div className="w-8 h-8 rounded-full bg-accent-green" />
+            <div className="w-8 h-8 rounded-full bg-accent-blue" />
             <div className="w-8 h-8 rounded-full bg-black/30 dark:bg-white/30" />
             <div className="w-8 h-8 rounded-full bg-black/50 dark:bg-white/50" />
             <div className="w-8 h-8 rounded-full border border-black/10 dark:border-white/10" />
@@ -56,7 +56,7 @@ const DesignSystemCard: React.FC = () => {
           <div className="relative w-20 h-24">
             <div className="absolute inset-0 border-2 border-black/10 dark:border-white/10 rounded-t-full" />
             <div className="absolute bottom-0 left-0 right-0 h-10 border-2 border-black/10 dark:border-white/10 rounded-b-lg" />
-            <div className="absolute bottom-4 left-4 right-4 h-6 bg-accent-green/20 blur-md rounded-full animate-pulse" />
+            <div className="absolute bottom-4 left-4 right-4 h-6 bg-accent-blue/20 blur-md rounded-full animate-pulse" />
           </div>
         </div>
         <div className="flex items-center justify-between">

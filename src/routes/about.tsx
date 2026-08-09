@@ -1,7 +1,8 @@
 import React from 'react';
 import { createFileRoute } from '@tanstack/react-router';
-import MainLayout from '@/app/layout/MainLayout';
-import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import { BlurFade } from '@/components/ui/blur-fade';
+import { clients, experience, services } from '@/lib/portfolio';
 
 export const Route = createFileRoute('/about')({
   component: AboutPage,
@@ -9,39 +10,87 @@ export const Route = createFileRoute('/about')({
 
 function AboutPage() {
   return (
-    <MainLayout>
-      <div className="max-w-2xl mx-auto py-24 px-4">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-7xl font-black text-[#1D1D1F] tracking-tight mb-12"
-        >
-          Engineering <br />with Purpose.
-        </motion.h1>
-        
-        <div className="flex flex-col gap-8 text-xl text-[#86868B] font-medium leading-relaxed">
-          <p>
-            I'm Adedeji, a software engineer dedicated to building high-performance 
-            web applications that don't just work—they feel incredible to use.
-          </p>
-          <p>
-            With over 4 years of experience specializing in React, TypeScript, 
-            and modern frontend architectures, I've helped scale platforms 
-            in fintech, logistics, and edtech.
-          </p>
-          
-          <div className="grid grid-cols-2 gap-8 mt-12">
-             <div className="flex flex-col gap-2">
-                <span className="text-sm font-black text-[#1D1D1F] uppercase tracking-widest">Focus</span>
-                <span>User Experience & Engineering Quality</span>
-             </div>
-             <div className="flex flex-col gap-2">
-                <span className="text-sm font-black text-[#1D1D1F] uppercase tracking-widest">Location</span>
-                <span>Lagos, Nigeria (UTC+1)</span>
-             </div>
+    <>
+      <Helmet>
+        <title>About | Adedeji Agunbiade</title>
+        <meta name="description" content="About Adedeji Agunbiade, senior full-stack software engineer in Lagos." />
+      </Helmet>
+
+      <section className="page-intro">
+        <BlurFade>
+          <p>About</p>
+          <h1>I build software with a bias for clarity, performance, and product usefulness.</h1>
+        </BlurFade>
+      </section>
+
+      <section className="split-section">
+        <BlurFade>
+          <h2>Profile</h2>
+        </BlurFade>
+        <BlurFade delay={0.08}>
+          <div className="prose-block">
+            <p className="lead-copy">
+              I am Adedeji Agunbiade, a senior software engineer based in Lagos, Nigeria. My work spans backend systems, API design, React frontends, and cloud-native delivery.
+            </p>
+            <p>
+              I have worked across logistics, fintech, commerce, and education products. The throughline is simple: take complex operational domains and make them reliable, understandable, and shippable.
+            </p>
+            <p>
+              I enjoy teams that value direct communication, strong execution, and engineering decisions that survive real users.
+            </p>
+          </div>
+        </BlurFade>
+      </section>
+
+      <section className="portrait-band" aria-label="Adedeji portrait">
+        <BlurFade>
+          <img src="/assets/images/adedeji-thumbnail.jpg" alt="Adedeji Agunbiade" />
+        </BlurFade>
+      </section>
+
+      <section className="two-column-lists">
+        <div>
+          <BlurFade>
+            <h2>Experience</h2>
+          </BlurFade>
+          <div className="line-list">
+            {experience.map((item, index) => (
+              <BlurFade key={item.company} className="line-item" delay={index * 0.04} inView>
+                <div>
+                  <h3>{item.company}</h3>
+                  <p>{item.role}</p>
+                </div>
+                <span>{item.period}</span>
+              </BlurFade>
+            ))}
           </div>
         </div>
-      </div>
-    </MainLayout>
+        <div>
+          <BlurFade>
+            <h2>Services</h2>
+          </BlurFade>
+          <div className="line-list">
+            {services.map((service, index) => (
+              <BlurFade key={service} className="line-item compact" delay={index * 0.04} inView>
+                <h3>{service}</h3>
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="split-section list-section">
+        <BlurFade>
+          <h2>Selected teams</h2>
+        </BlurFade>
+        <div className="line-list">
+          {clients.map((client, index) => (
+            <BlurFade key={client} className="line-item compact" delay={index * 0.04} inView>
+              <h3>{client}</h3>
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

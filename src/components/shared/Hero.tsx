@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import ThemeToggle from '@/components/shared/ThemeToggle';
+import ThemeToggle from '@/components/shared/theme-toggle';
+import SoundToggle from '@/components/shared/sound-toggle';
 
 
 const Hero: React.FC = () => {
@@ -94,7 +95,8 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Theme toggle — top-right of hero */}
-          <div className="pt-1 shrink-0">
+          <div className="pt-1 shrink-0 flex items-center gap-1.5">
+            <SoundToggle />
             <ThemeToggle />
           </div>
         </div>
@@ -143,4 +145,3 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-
